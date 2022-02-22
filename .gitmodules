@@ -1,0 +1,8 @@
+[submodule "src/plansys2_tfd_plan_solver"]
+	path = src/plansys2_tfd_plan_solver
+	url = https://github.com/IntelligentRoboticsLabs/plansys2_tfd_plan_solver.git
+	branch = foxy-devel
+[submodule "src/src/ros2_planning_system"]
+	path = src/src/ros2_planning_system
+	url = https://github.com/IntelligentRoboticsLabs/ros2_planning_system.git
+	branch = foxy-devel

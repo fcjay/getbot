@@ -1,7 +1,9 @@
-build/
-install/
-log/
-.gitignore/
+/.vscode/**
+/install/**
+/log/**
+/build/**
+
+
 # Prerequisites
 *.d
 

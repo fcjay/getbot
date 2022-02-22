@@ -38,7 +38,7 @@ private:
       progress_ += 0.5;
       send_feedback(progress_, "approach_items_target");
 
-      std::cout << "Approaching items target" << progress_* 100.0 << "%" << std::endl;
+      std::cout << "Approaching items target... " << progress_* 100.0 << "%" << std::endl;
 
 
     } else {

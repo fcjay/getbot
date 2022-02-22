@@ -1,6 +1,9 @@
-build/
-install/
-log/
+
+/.vscode/**
+/install/**
+/log/**
+/build/**
+
 
 
 # Prerequisites

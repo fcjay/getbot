@@ -1,0 +1,52 @@
+#parameters for robot_1
+drop_items_1:
+  ros__parameters:
+    specialized_arguments: ["p6building","robot_1","red_balls"]
+    plugins:
+      - plansys2_lower_arm_bt_node
+      - plansys2_open_gripper_bt_node
+
+
+grab_items_1:
+  ros__parameters:
+    specialized_arguments: ["p6building","robot_1","red_balls"]
+    plugins:
+      - plansys2_close_gripper_bt_node
+      - plansys2_open_gripper_bt_node
+      - plansys2_lift_arm_bt_node
+
+
+#parameters for robot_2
+drop_items_2:
+  ros__parameters:
+    specialized_arguments: ["p6building","robot_2","blue_balls"]
+    plugins:
+      - plansys2_lower_arm_bt_node
+      - plansys2_open_gripper_bt_node
+
+
+grab_items_2:
+  ros__parameters:
+    specialized_arguments: ["p6building","robot_2","blue_balls"]
+    plugins:
+      - plansys2_close_gripper_bt_node
+      - plansys2_open_gripper_bt_node
+      - plansys2_lift_arm_bt_node
+     
+
+#parameters for robot_3
+drop_items_3:
+  ros__parameters:
+    specialized_arguments: ["p6building","robot_3","white_boxes"]
+    plugins:
+      - plansys2_lower_arm_bt_node
+      - plansys2_open_gripper_bt_node
+
+
+grab_items_3:
+  ros__parameters:
+    specialized_arguments: ["p6building","robot_3","white_boxes"]
+    plugins:
+      - plansys2_close_gripper_bt_node
+      - plansys2_open_gripper_bt_node
+      - plansys2_lift_arm_bt_node

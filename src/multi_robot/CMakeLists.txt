@@ -60,11 +60,11 @@ ament_target_dependencies(multi_robot_controller ${dependencies})
 add_executable(approach_items_target_node src/approach_items_target_node.cpp)
 ament_target_dependencies(approach_items_target_node ${dependencies})
 
-#add_executable(drop_items_node src/drop_items_node.cpp)
-#ament_target_dependencies(drop_items_node ${dependencies})
+add_executable(drop_items_node src/drop_items_node.cpp)
+ament_target_dependencies(drop_items_node ${dependencies})
 
-#add_executable(grab_items_node src/grab_items_node.cpp)
-#ament_target_dependencies(grab_items_node ${dependencies})
+add_executable(grab_items_node src/grab_items_node.cpp)
+ament_target_dependencies(grab_items_node ${dependencies})
 
 add_executable(handle_items_node src/handle_items_node.cpp)
 ament_target_dependencies(handle_items_node ${dependencies})
@@ -82,9 +82,9 @@ install(TARGETS
   multi_robot_controller
   
   approach_items_target_node
-  #drop_items_node
+  drop_items_node
 
-  #grab_items_node
+  grab_items_node
   handle_items_node
   approach_items_node
  

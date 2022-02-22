@@ -35,10 +35,10 @@ private:
   void do_work()
   {
     if (progress_ < 1.0) {
-      progress_ += 0.05;
+      progress_ += 0.5;
       send_feedback(progress_, "Handle items running");
 
-      std::cout << "Handling items " << progress_* 100.0 << "%" << std::endl;
+      std::cout << "Handling items... " << progress_* 100.0 << "%" << std::endl;
 
 
     } else {

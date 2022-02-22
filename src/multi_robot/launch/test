@@ -1,0 +1,66 @@
+ approach_items_target_1_cmd = Node(
+        package='multi_robot',
+        executable='approach_items_target_node',
+        name='approach_items_target_1',
+        namespace=namespace,
+        output='screen',
+        parameters=[
+          {
+            'specialized_arguments': ["robot_1"]
+          }
+        ])
+
+    drop_items_1_cmd = Node(
+        package='multi_robot',
+        executable='drop_items_node',
+        name='drop_items_1',
+        namespace=namespace,
+        output='screen',
+        parameters=[
+          {
+            'specialized_arguments': ["robot_1"]
+          }
+        ])
+
+    grab_items_1_cmd = Node(
+        package='multi_robot',
+        executable='grab_items_node',
+        name='grab_items_1',
+        namespace=namespace,
+        output='screen',
+        parameters=[
+          {
+            'specialized_arguments': ["robot_1"]
+          }
+        ])
+
+    handle_items_1_cmd = Node(
+        package='multi_robot',
+        executable='handle_items_node',
+        name='handle_items_1',
+        namespace=namespace,
+        output='screen',
+        parameters=[
+          {
+            'specialized_arguments': ["robot_1"]
+          }
+        ])
+
+    approach_items_1_cmd = Node(
+        package='multi_robot',
+        executable='approach_items_node',
+        name='approach_items_node',
+        namespace=namespace,
+        output='screen',
+        parameters=[
+          {
+            'specialized_arguments': ["robot_1"]
+          }
+        ])
+
+
+    ld.add_action(approach_items_target_1_cmd)
+    ld.add_action(drop_items_1_cmd)
+    ld.add_action(grab_items_1_cmd)
+    ld.add_action(handle_items_1_cmd)
+    ld.add_action(approach_items_1_cmd)

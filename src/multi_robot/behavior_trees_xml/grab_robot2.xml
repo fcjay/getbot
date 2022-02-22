@@ -1,0 +1,10 @@
+<root main_tree_to_execute = "MainTree" >
+    <BehaviorTree ID="MainTree">
+       <Sequence name="root_sequence">
+            <ExtendArm    name="open_gripper"/>
+           <OpenGripper    name="open_gripper"/>
+           <CloseGripper   name="close_gripper"/>
+           <LiftArm   name="lift_arm"/>
+       </Sequence>
+    </BehaviorTree>
+</root>

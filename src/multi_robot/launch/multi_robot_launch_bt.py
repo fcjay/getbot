@@ -48,38 +48,36 @@ def generate_launch_description():
         ])
 
     drop_items_1_cmd = Node(
-        package='multi_robot',
-        executable='drop_items_node',
+        package='plansys2_bt_actions',
+        executable='bt_action_node',
         name='drop_items_1',
         namespace=namespace,
         output='screen',
         parameters=[
-          #example_dir + '/config/params_multi_robot.yaml',
+          example_dir + '/config/params_multi_robot.yaml',
           {
-            'specialized_arguments': ["p6building","robot_1","red_balls"]
-            #'action_name': 'drop_items',
-            #'enable_groot_monitoring' : True,
-            #'publisher_port': 1668,
-            #'server_port': 1669,
-            #'bt_xml_file': example_dir + '/behavior_trees_xml/drop.xml'
+            'action_name': 'drop_items',
+            'enable_groot_monitoring' : True,
+            'publisher_port': 1668,
+            'server_port': 1669,
+            'bt_xml_file': example_dir + '/behavior_trees_xml/drop.xml'
           }
         ])
 
     grab_items_1_cmd = Node(
-        package='multi_robot',
-        executable='grab_items_node',
+        package='plansys2_bt_actions',
+        executable='bt_action_node',
         name='grab_items_1',
         namespace=namespace,
         output='screen',
         parameters=[
-         #example_dir + '/config/params_multi_robot.yaml',
+         example_dir + '/config/params_multi_robot.yaml',
           {
-            'specialized_arguments': ["p6building","robot_1","red_balls"]
-            #'action_name': 'grab_items',
-            #'enable_groot_monitoring' : True,
-            #'publisher_port': 1678,
-            #'server_port': 1679,
-            #'bt_xml_file': example_dir + '/behavior_trees_xml/grab.xml'
+            'action_name': 'grab_items',
+            'enable_groot_monitoring' : True,
+            'publisher_port': 1678,
+            'server_port': 1679,
+            'bt_xml_file': example_dir + '/behavior_trees_xml/grab.xml'
           }
         ])
 
@@ -122,38 +120,36 @@ def generate_launch_description():
         ])
 
     drop_items_2_cmd = Node(
-        package='multi_robot',
-        executable='drop_items_node',
+        package='plansys2_bt_actions',
+        executable='bt_action_node',
         name='drop_items_2',
         namespace=namespace,
         output='screen',
         parameters=[
-          #example_dir + '/config/params_multi_robot.yaml',
+          example_dir + '/config/params_multi_robot.yaml',
           {
-            'specialized_arguments': ["p6building","robot_2","blue_balls"]
-            #'action_name': 'drop_items',
-            #'enable_groot_monitoring' : True,
-            #'publisher_port': 1670,
-            #'server_port': 1671,
-            #'bt_xml_file': example_dir + '/behavior_trees_xml/drop.xml'
+            'action_name': 'drop_items',
+            'enable_groot_monitoring' : True,
+            'publisher_port': 1670,
+            'server_port': 1671,
+            'bt_xml_file': example_dir + '/behavior_trees_xml/drop.xml'
           }
         ])
 
     grab_items_2_cmd = Node(
-        package='multi_robot',
-        executable='grab_items_node',
+        package='plansys2_bt_actions',
+        executable='bt_action_node',
         name='grab_items_2',
         namespace=namespace,
         output='screen',
         parameters=[
-          #example_dir + '/config/params_multi_robot.yaml',
+          example_dir + '/config/params_multi_robot.yaml',
           {
-            'specialized_arguments': ["p6building","robot_2","blue_balls"]
-            #'action_name': 'grab_items',
-            #'enable_groot_monitoring' : True,
-            #'publisher_port': 1674,
-            #'server_port': 1675,
-            #'bt_xml_file': example_dir + '/behavior_trees_xml/grab.xml'
+            'action_name': 'grab_items',
+            'enable_groot_monitoring' : True,
+            'publisher_port': 1674,
+            'server_port': 1675,
+            'bt_xml_file': example_dir + '/behavior_trees_xml/grab.xml'
           }
         ])
 
@@ -196,38 +192,36 @@ def generate_launch_description():
         ])
 
     drop_items_3_cmd = Node(
-        package='multi_robot',
-        executable='drop_items_node',
+        package='plansys2_bt_actions',
+        executable='bt_action_node',
         name='drop_items_3',
         namespace=namespace,
         output='screen',
         parameters=[
-          #example_dir + '/config/params_multi_robot.yaml',
+          example_dir + '/config/params_multi_robot.yaml',
           {
-            'specialized_arguments': ["p6building","robot_3","white_boxes"]
-            #'action_name': 'drop_items',
-            #'enable_groot_monitoring' : True,
-            #'publisher_port': 1672,
-            #'server_port': 1673,
-            #'bt_xml_file': example_dir + '/behavior_trees_xml/drop.xml'
+            'action_name': 'drop_items',
+            'enable_groot_monitoring' : True,
+            'publisher_port': 1672,
+            'server_port': 1673,
+            'bt_xml_file': example_dir + '/behavior_trees_xml/drop.xml'
           }
         ])
 
     grab_items_3_cmd = Node(
-        package='multi_robot',
-        executable='grab_items_node',
+        package='plansys2_bt_actions',
+        executable='bt_action_node',
         name='grab_items_3',
         namespace=namespace,
         output='screen',
         parameters=[
-          #example_dir + '/config/params_multi_robot.yaml',
+          example_dir + '/config/params_multi_robot.yaml',
           {
-            'specialized_arguments': ["p6building","robot_3","white_boxes"]
-            #'action_name': 'grab_items',
-            #'enable_groot_monitoring' : True,
-            #'publisher_port': 1676,
-            #'server_port': 1677,
-            #'bt_xml_file': example_dir + '/behavior_trees_xml/grab.xml'
+            'action_name': 'grab_items',
+            'enable_groot_monitoring' : True,
+            'publisher_port': 1676,
+            'server_port': 1677,
+            'bt_xml_file': example_dir + '/behavior_trees_xml/grab.xml'
           }
         ])
 

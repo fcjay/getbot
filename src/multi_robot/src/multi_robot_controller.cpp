@@ -65,9 +65,9 @@ public:
     problem_expert_->addPredicate(plansys2::Predicate("(items_dropped robot_2 blue_balls)"));
     problem_expert_->addPredicate(plansys2::Predicate("(items_dropped robot_3 white_boxes)"));
 
-    problem_expert_->addFunction(plansys2::Function("= battery_level robot_1 100"));
-    problem_expert_->addFunction(plansys2::Function("= battery_level robot_2 100"));
-    problem_expert_->addFunction(plansys2::Function("= battery_level robot_3 100"));
+    problem_expert_->addFunction(plansys2::Function("= battery_level robot_1 80"));
+    problem_expert_->addFunction(plansys2::Function("= battery_level robot_2 70"));
+    problem_expert_->addFunction(plansys2::Function("= battery_level robot_3 60"));
 
     problem_expert_->addFunction(plansys2::Function("= detected_items red_balls 10"));
     problem_expert_->addFunction(plansys2::Function("= detected_items blue_balls 10"));
@@ -94,6 +94,24 @@ public:
 
   void step()
   {
+    auto feedback = executor_client_->getFeedBack();
+
+      for (const auto &action_feedback : feedback.action_execution_status)
+      {
+
+        RCLCPP_INFO_STREAM(get_logger(), "[" << action_feedback.action_full_name << " " << action_feedback.completion * 100.0 << "%]");
+      }
+      std::cout << std::endl;
+    /**std::vector<plansys2::Function> functions = problem_expert_->getFunctions();
+    for (const auto & function : functions){
+      if (function.name == "battery_level" && function.parameters[0].name == "robot_1")
+        if(function.value < battery_level_low){
+          RCLCPP_INFO(get_logger(), "**********************************************************");
+          RCLCPP_INFO(get_logger(), "********************** BATTERY LOW ROBOT_1 *******************");
+          RCLCPP_INFO(get_logger(), "**********************************************************");
+        }
+    }**/
+
     if (!executor_client_->execute_and_check_plan()) {  // Plan finished
       auto result = executor_client_->getResult();
 
@@ -110,6 +128,8 @@ private:
   std::shared_ptr<plansys2::PlannerClient> planner_client_;
   std::shared_ptr<plansys2::ProblemExpertClient> problem_expert_;
   std::shared_ptr<plansys2::ExecutorClient> executor_client_;
+
+  double battery_level_low = 70.0;
 };
 
 int main(int argc, char ** argv)

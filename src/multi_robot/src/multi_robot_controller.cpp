@@ -59,13 +59,21 @@ public:
     problem_expert_->addInstance(plansys2::Instance{"red_balls", "balls"});
     problem_expert_->addInstance(plansys2::Instance{"blue_balls","balls"});
     problem_expert_->addInstance(plansys2::Instance{"white_boxes", "boxes"});
-  
+    /***
+    problem_expert_->addInstance(plansys2::Instance{"entrance", "room"});
+    problem_expert_->addInstance(plansys2::Instance{"first_floor", "room"});
+    problem_expert_->addInstance(plansys2::Instance{"charging_room", "room"});
+
+    problem_expert_->addPredicate(plansys2::Predicate("(connected charging_room first_floor)"));
+    problem_expert_->addPredicate(plansys2::Predicate("(connected first_floor charging_room)"));
+    
+    ***/
 
     problem_expert_->addPredicate(plansys2::Predicate("(items_dropped robot_1 red_balls)"));
     problem_expert_->addPredicate(plansys2::Predicate("(items_dropped robot_2 blue_balls)"));
     problem_expert_->addPredicate(plansys2::Predicate("(items_dropped robot_3 white_boxes)"));
 
-    problem_expert_->addFunction(plansys2::Function("= battery_level robot_1 100"));
+    problem_expert_->addFunction(plansys2::Function("= battery_level robot_1 20"));
     problem_expert_->addFunction(plansys2::Function("= battery_level robot_2 100"));
     problem_expert_->addFunction(plansys2::Function("= battery_level robot_3 100"));
 
@@ -108,6 +116,8 @@ public:
       if (function.name == "battery_level" && function.parameters[0].name == "robot_1"){
         if(function.value < battery_level_low){
           RCLCPP_INFO(get_logger(), "********************** BATTERY LOW ROBOT_1 *******************");
+          problem_expert_->updateFunction(plansys2::Function("= battery_level robot_1 100"));
+
         }
       }
       if (function.name == "battery_level" && function.parameters[0].name == "robot_2"){
@@ -118,6 +128,28 @@ public:
       if (function.name == "battery_level" && function.parameters[0].name == "robot_3"){
         if(function.value < battery_level_low){
           RCLCPP_INFO(get_logger(), "********************** BATTERY LOW ROBOT_3 *******************");
+
+          problem_expert_->removePredicate(plansys2::Predicate("(items_handeled robot_3 white_boxes)"));
+          problem_expert_->addPredicate(plansys2::Predicate("(battery_low robot_3)"));
+          problem_expert_->addPredicate(plansys2::Predicate("(robot_at robot_3 entrance)"));
+          problem_expert_->addPredicate(plansys2::Predicate("(charging_point_at charging_room)"));
+
+          problem_expert_->setGoal(plansys2::Goal("(and(battery_full robot_3))"));
+
+          auto domain = domain_expert_->getDomain();
+          auto problem = problem_expert_->getProblem();
+          auto plan = planner_client_->getPlan(domain, problem);
+
+          if (plan.has_value())
+          {
+            std::cout << "Plan Found to Reach Goal: " << parser::pddl::toString(problem_expert_->getGoal()) << std::endl;
+
+            executor_client_->execute_and_check_plan();
+            std::cout << "EXECUTING PLAN " << std::endl;
+            executor_client_->start_plan_execution(plan.value());
+            break;
+          }
+          break;
         }
       }
         

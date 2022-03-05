@@ -77,7 +77,7 @@ def generate_launch_description():
             'enable_groot_monitoring' : True,
             'publisher_port': 1678,
             'server_port': 1679,
-            'bt_xml_file': example_dir + '/behavior_trees_xml/grab.xml'
+            'bt_xml_file': example_dir + '/behavior_trees_xml/grab_robot1.xml'
           }
         ])
 

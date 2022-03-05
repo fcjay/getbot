@@ -29,7 +29,8 @@ def generate_launch_description():
             'launch',
             'plansys2_bringup_launch_monolithic.py')),
         launch_arguments={
-          'model_file': example_dir + '/pddl/multi_robots.pddl',
+          'model_file': example_dir + '/pddl/multi_robots.pddl:'+
+                        example_dir + '/pddl/domain_1.pddl',
           'namespace': namespace
           }.items())
 
@@ -255,6 +256,37 @@ def generate_launch_description():
           }
         ])
 
+    move_cmd = Node(
+        package='multi_robot',
+        executable ='move_action_node',
+        name ='move_action_node',
+        namespace = namespace,
+        output ='screen',
+        parameters=[{
+          'specialized_arguments': ["robot_3"]
+        }])
+
+    charge_cmd = Node(
+        package ='multi_robot',
+        executable ='charge_action_node',
+        name ='charge_action_node',
+        namespace =namespace,
+        output='screen',
+        parameters=[
+          {
+            'specialized_arguments': ["robot_3"]
+          }
+        ])
+
+    ask_charge_cmd = Node(
+        package = 'multi_robot',
+        executable = 'ask_charge_action_node',
+        name = 'ask_charge_action_node',
+        namespace = namespace,
+        output = 'screen',
+        parameters = [{
+          'specialized_arguments': ["robot_3"]
+        }])
     ld = LaunchDescription()
 
     # Set environment variables
@@ -285,5 +317,9 @@ def generate_launch_description():
     ld.add_action(handle_items_3_cmd)
     ld.add_action(approach_items_3_cmd)
 
+    #
+    ld.add_action(move_cmd)
+    ld.add_action(charge_cmd)
+    ld.add_action(ask_charge_cmd)
 
     return ld

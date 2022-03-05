@@ -1,0 +1,231 @@
+var0
+   0: Atom defined!at_target_items(<blue_balls>)
+   1: <none of those>
+var1
+   0: Atom defined!at_target_items(<red_balls>)
+   1: <none of those>
+var2
+   0: Atom defined!at_target_items(<white_boxes>)
+   1: <none of those>
+var3
+   0: Atom defined!battery_level(<robot_1>)
+   1: <none of those>
+var4
+   0: Atom defined!battery_level(<robot_2>)
+   1: <none of those>
+var5
+   0: Atom defined!battery_level(<robot_3>)
+   1: <none of those>
+var6
+   0: Atom defined!carried_items(<robot_1>)
+   1: <none of those>
+var7
+   0: Atom defined!carried_items(<robot_2>)
+   1: <none of those>
+var8
+   0: Atom defined!carried_items(<robot_3>)
+   1: <none of those>
+var9
+   0: Atom defined!detected_items(<blue_balls>)
+   1: <none of those>
+var10
+   0: Atom defined!detected_items(<red_balls>)
+   1: <none of those>
+var11
+   0: Atom defined!detected_items(<white_boxes>)
+   1: <none of those>
+var12
+   0: Atom items_approached(<robot_1>, <red_balls>)
+   1: <none of those>
+var13
+   0: Atom items_approached(<robot_2>, <blue_balls>)
+   1: <none of those>
+var14
+   0: Atom items_approached(<robot_3>, <white_boxes>)
+   1: <none of those>
+var15
+   0: Atom items_dropped(<robot_1>, <red_balls>)
+   1: <none of those>
+var16
+   0: Atom items_dropped(<robot_2>, <blue_balls>)
+   1: <none of those>
+var17
+   0: Atom items_dropped(<robot_3>, <white_boxes>)
+   1: <none of those>
+var18
+   0: Atom items_grabbed(<robot_1>, <red_balls>)
+   1: <none of those>
+var19
+   0: Atom items_grabbed(<robot_2>, <blue_balls>)
+   1: <none of those>
+var20
+   0: Atom items_grabbed(<robot_3>, <white_boxes>)
+   1: <none of those>
+var21
+   0: Atom items_handeled(<robot_1>, <red_balls>)
+   1: <none of those>
+var22
+   0: Atom items_handeled(<robot_2>, <blue_balls>)
+   1: <none of those>
+var23
+   0: Atom items_handeled(<robot_3>, <white_boxes>)
+   1: <none of those>
+var24
+   0: Atom items_target_approached(<robot_1>, <red_balls>)
+   1: <none of those>
+var25
+   0: Atom items_target_approached(<robot_2>, <blue_balls>)
+   1: <none of those>
+var26
+   0: Atom items_target_approached(<robot_3>, <white_boxes>)
+   1: <none of those>
+var27
+   -2: PNE derived!1()
+var28
+   -2: PNE derived!10(<blue_balls>, <blue_balls>)
+var29
+   -2: PNE derived!10(<blue_balls>, <red_balls>)
+var30
+   -2: PNE derived!10(<blue_balls>, <white_boxes>)
+var31
+   -2: PNE derived!10(<red_balls>, <blue_balls>)
+var32
+   -2: PNE derived!10(<red_balls>, <red_balls>)
+var33
+   -2: PNE derived!10(<red_balls>, <white_boxes>)
+var34
+   -2: PNE derived!10(<white_boxes>, <blue_balls>)
+var35
+   -2: PNE derived!10(<white_boxes>, <red_balls>)
+var36
+   -2: PNE derived!10(<white_boxes>, <white_boxes>)
+var37
+   -2: PNE derived!11()
+var38
+   -2: PNE derived!2(<robot_1>)
+var39
+   -2: PNE derived!2(<robot_2>)
+var40
+   -2: PNE derived!2(<robot_3>)
+var41
+   -2: PNE derived!3()
+var42
+   -2: PNE derived!4()
+var43
+   -2: PNE derived!5(<robot_1>)
+var44
+   -2: PNE derived!5(<robot_2>)
+var45
+   -2: PNE derived!5(<robot_3>)
+var46
+   -2: PNE derived!6()
+var47
+   -2: PNE derived!7(<robot_1>)
+var48
+   -2: PNE derived!7(<robot_2>)
+var49
+   -2: PNE derived!7(<robot_3>)
+var50
+   -2: PNE derived!8()
+var51
+   -2: PNE derived!9(<robot_1>)
+var52
+   -2: PNE derived!9(<robot_2>)
+var53
+   -2: PNE derived!9(<robot_3>)
+var54
+   -2: PNE at_target_items(<blue_balls>)
+var55
+   -2: PNE at_target_items(<red_balls>)
+var56
+   -2: PNE at_target_items(<white_boxes>)
+var57
+   -2: PNE battery_level(<robot_1>)
+var58
+   -2: PNE battery_level(<robot_2>)
+var59
+   -2: PNE battery_level(<robot_3>)
+var60
+   -2: PNE carried_items(<robot_1>)
+var61
+   -2: PNE carried_items(<robot_2>)
+var62
+   -2: PNE carried_items(<robot_3>)
+var63
+   -2: PNE detected_items(<blue_balls>)
+var64
+   -2: PNE detected_items(<red_balls>)
+var65
+   -2: PNE detected_items(<white_boxes>)
+var66
+   0: FunctionComparison (< PNE derived!2(<robot_1>), PNE derived!3())
+   1: NegatedFunctionComparison (< PNE derived!2(<robot_1>), PNE derived!3())
+   2: <none of those>
+var67
+   0: FunctionComparison (> PNE derived!5(<robot_1>), PNE derived!3())
+   1: NegatedFunctionComparison (> PNE derived!5(<robot_1>), PNE derived!3())
+   2: <none of those>
+var68
+   0: FunctionComparison (< PNE derived!2(<robot_2>), PNE derived!3())
+   1: NegatedFunctionComparison (< PNE derived!2(<robot_2>), PNE derived!3())
+   2: <none of those>
+var69
+   0: FunctionComparison (> PNE derived!5(<robot_2>), PNE derived!3())
+   1: NegatedFunctionComparison (> PNE derived!5(<robot_2>), PNE derived!3())
+   2: <none of those>
+var70
+   0: FunctionComparison (< PNE derived!2(<robot_3>), PNE derived!3())
+   1: NegatedFunctionComparison (< PNE derived!2(<robot_3>), PNE derived!3())
+   2: <none of those>
+var71
+   0: FunctionComparison (> PNE derived!5(<robot_3>), PNE derived!3())
+   1: NegatedFunctionComparison (> PNE derived!5(<robot_3>), PNE derived!3())
+   2: <none of those>
+var72
+   0: FunctionComparison (> PNE carried_items(<robot_1>), PNE derived!3())
+   1: NegatedFunctionComparison (> PNE carried_items(<robot_1>), PNE derived!3())
+   2: <none of those>
+var73
+   0: FunctionComparison (> PNE carried_items(<robot_2>), PNE derived!3())
+   1: NegatedFunctionComparison (> PNE carried_items(<robot_2>), PNE derived!3())
+   2: <none of those>
+var74
+   0: FunctionComparison (> PNE carried_items(<robot_3>), PNE derived!3())
+   1: NegatedFunctionComparison (> PNE carried_items(<robot_3>), PNE derived!3())
+   2: <none of those>
+var75
+   0: FunctionComparison (> PNE derived!9(<robot_1>), PNE derived!3())
+   1: NegatedFunctionComparison (> PNE derived!9(<robot_1>), PNE derived!3())
+   2: <none of those>
+var76
+   0: FunctionComparison (> PNE derived!9(<robot_2>), PNE derived!3())
+   1: NegatedFunctionComparison (> PNE derived!9(<robot_2>), PNE derived!3())
+   2: <none of those>
+var77
+   0: FunctionComparison (> PNE derived!9(<robot_3>), PNE derived!3())
+   1: NegatedFunctionComparison (> PNE derived!9(<robot_3>), PNE derived!3())
+   2: <none of those>
+var78
+   0: FunctionComparison (> PNE derived!7(<robot_1>), PNE derived!3())
+   1: NegatedFunctionComparison (> PNE derived!7(<robot_1>), PNE derived!3())
+   2: <none of those>
+var79
+   0: FunctionComparison (> PNE derived!7(<robot_2>), PNE derived!3())
+   1: NegatedFunctionComparison (> PNE derived!7(<robot_2>), PNE derived!3())
+   2: <none of those>
+var80
+   0: FunctionComparison (> PNE derived!7(<robot_3>), PNE derived!3())
+   1: NegatedFunctionComparison (> PNE derived!7(<robot_3>), PNE derived!3())
+   2: <none of those>
+var81
+   0: FunctionComparison (> PNE derived!10(<red_balls>, <red_balls>), PNE derived!3())
+   1: NegatedFunctionComparison (> PNE derived!10(<red_balls>, <red_balls>), PNE derived!3())
+   2: <none of those>
+var82
+   0: FunctionComparison (> PNE derived!10(<blue_balls>, <blue_balls>), PNE derived!3())
+   1: NegatedFunctionComparison (> PNE derived!10(<blue_balls>, <blue_balls>), PNE derived!3())
+   2: <none of those>
+var83
+   0: FunctionComparison (> PNE derived!10(<white_boxes>, <white_boxes>), PNE derived!3())
+   1: NegatedFunctionComparison (> PNE derived!10(<white_boxes>, <white_boxes>), PNE derived!3())
+   2: <none of those>

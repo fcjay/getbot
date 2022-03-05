@@ -72,6 +72,17 @@ ament_target_dependencies(handle_items_node ${dependencies})
 add_executable(approach_items_node src/approach_items_node.cpp)
 ament_target_dependencies(approach_items_node ${dependencies})
 
+###
+add_executable(move_action_node src/move_action_node.cpp)
+ament_target_dependencies(move_action_node ${dependencies})
+
+add_executable(charge_action_node src/charge_action_node.cpp)
+ament_target_dependencies(charge_action_node ${dependencies})
+
+add_executable(ask_charge_action_node src/ask_charge_action_node.cpp)
+ament_target_dependencies(ask_charge_action_node ${dependencies})
+
+
 
 install(
   DIRECTORY launch pddl config behavior_trees_xml params
@@ -80,13 +91,16 @@ install(
 install(TARGETS
  
   multi_robot_controller
-  
   approach_items_target_node
   drop_items_node
 
   grab_items_node
   handle_items_node
   approach_items_node
+
+  move_action_node
+  charge_action_node
+  ask_charge_action_node
  
   ${plugin_libs}
   ARCHIVE DESTINATION lib

@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <chrono>
 
 #include <plansys2_pddl_parser/Utils.h>
 #include "plansys2_msgs/msg/action_execution_info.hpp"
@@ -19,16 +20,35 @@
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
 
+#include "std_msgs/msg/int32.hpp"
+
+using std::placeholders::_1;
+
+
+
 class Controller : public rclcpp::Node
 {
 public:
   Controller()
       : rclcpp::Node("behavoir_controller"), state(STARTING)
   {
+    battery_level_sub_ = this->create_subscription<std_msgs::msg::Int32>(
+      "/battery_pub", 1, std::bind(&Controller::topic_callback, this, _1));
+
   }
+
+  int32_t topic_callback(const std_msgs::msg::Int32::SharedPtr msg)
+  {
+    RCLCPP_INFO(this->get_logger(), "I heard: '%d'", msg->data);
+    battery_level = msg->data;
+    return battery_level;
+  }
+
+  
 
   void init()
   {
+
     domain_expert_ = std::make_shared<plansys2::DomainExpertClient>();
     planner_client_ = std::make_shared<plansys2::PlannerClient>();
     problem_expert_ = std::make_shared<plansys2::ProblemExpertClient>();
@@ -50,8 +70,8 @@ public:
     problem_expert_->addFunction(plansys2::Function("= at_target_balls b1 0"));
     problem_expert_->addFunction(plansys2::Function("= carried_balls r1 0"));
     problem_expert_->addFunction(plansys2::Function("= at_target_balls_goal b1 2"));
+  
   }
-
   void step()
   {
     switch (state)
@@ -80,7 +100,6 @@ public:
     case RUN:
     {
       auto feedback = executor_client_->getFeedBack();
-
       for (const auto &action_feedback : feedback.action_execution_status)
       {
 
@@ -250,32 +269,33 @@ private:
 
   rclcpp::TimerBase::SharedPtr waiting_timer_;
 
-  typedef enum
-  {
-    STARTING,
-    RUN,
-    REPLAN_1,
-    REPLAN_2,
-    REPLAN_3,
-    REPLAN_4,
-    REPLAN_5
-  } StateType;
-  StateType state;
+  rclcpp::Subscription<std_msgs::msg::Int32>::SharedPtr battery_level_sub_;
 
-  bool check = false;
+    typedef enum
+    {
+      STARTING,
+      RUN,
+      REPLAN_1,
+      REPLAN_2,
+      REPLAN_3,
+      REPLAN_4,
+      REPLAN_5
+    } StateType;
+    StateType state;
+
+    bool check = false;
+    int32_t battery_level = 0;
 };
 
 int main(int argc, char **argv)
 {
-  rclcpp::init(argc, argv);
+ rclcpp::init(argc, argv);
   auto node = std::make_shared<Controller>();
 
   node->init();
 
-  rclcpp::Rate rate(10);
-  while (rclcpp::ok())
-  {
-
+  rclcpp::Rate rate(1);
+  while (rclcpp::ok()) {
     rate.sleep();
     rclcpp::spin_some(node->get_node_base_interface());
     node->step();
